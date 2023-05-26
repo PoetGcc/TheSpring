@@ -1,5 +1,7 @@
 package com.gcc.thespring.feg;
 
+import com.gcc.thespring.bean.git.Contributor;
+import com.gcc.thespring.bean.git.Issue;
 import feign.Param;
 import feign.RequestLine;
 

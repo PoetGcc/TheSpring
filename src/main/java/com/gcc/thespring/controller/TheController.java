@@ -2,7 +2,7 @@ package com.gcc.thespring.controller;
 
 import com.gcc.thespring.IRouter;
 import com.gcc.thespring.bean.Student;
-import com.gcc.thespring.feg.FeignGithubRequester;
+import com.gcc.thespring.feg.FeignGithubManager;
 import com.gcc.thespring.utils.StringUtils;
 import com.google.gson.Gson;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TheController {
 
     @GetMapping(IRouter.CONTRIBUTORS)
-    public String contributors() {
-        String json = FeignGithubRequester.getInstance().getContributorsJson();
+    public String contributors(@RequestParam(value = "owner", defaultValue = "OpenFeign") String owner,
+                               @RequestParam(value = "repo", defaultValue = "feign") String repo) {
+        String json = FeignGithubManager.getInstance().getContributorsJson(owner, repo);
         if (StringUtils.isEmpty(json)) {
             json = "{}";
         }

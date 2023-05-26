@@ -1,4 +1,4 @@
-package com.gcc.thespring.feg;
+package com.gcc.thespring.bean.git;
 
 import lombok.Data;
 
