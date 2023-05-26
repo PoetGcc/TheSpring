@@ -2,8 +2,10 @@ package com.gcc.thespring.feg;
 
 import com.gcc.thespring.bean.git.Contributor;
 import feign.Feign;
+import feign.Logger;
 import feign.codec.StringDecoder;
 import feign.okhttp.OkHttpClient;
+import feign.slf4j.Slf4jLogger;
 
 import java.util.List;
 
@@ -30,6 +32,8 @@ public class FeignGithubManager {
                 .client(new OkHttpClient())
                 // .decoder(new GsonDecoder())
                 .decoder(new StringDecoder())
+                .logger(new Slf4jLogger())
+                .logLevel(Logger.Level.FULL)
                 .target(IGitHub.class, BASE_URL);
     }
 

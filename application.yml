@@ -1,2 +1,12 @@
 server:
   port: 8088
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+
+logging:
+  level:
+    feign.Logger: debug
