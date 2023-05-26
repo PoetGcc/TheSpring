@@ -1,7 +1,14 @@
 package com.gcc.thespring;
 
 public interface IRouter {
+    String STUDENT_INFO = "studentInfo";
+
+
+    /* ---------------------------------- GitHub  Start ---------------------------------- */
+
     String CONTRIBUTORS = "contributors";
 
-    String STUDENT_INFO = "studentInfo";
+    String BRANCHES = "branches";
+
+    /* ---------------------------------- GitHub  End ---------------------------------- */
 }

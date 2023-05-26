@@ -33,6 +33,7 @@ public class FeignGithubManager {
                 .target(IGitHub.class, BASE_URL);
     }
 
+    @Deprecated
     public void getContributors() {
         if (mIGithub == null) {
             return;
@@ -44,12 +45,25 @@ public class FeignGithubManager {
         }
     }
 
+    /**
+     * 贡献者信息
+     */
     public String getContributorsJson(String owner, String repo) {
         if (mIGithub == null) {
             return "";
         }
 
-        String json = mIGithub.contributorsJson(owner, repo);
-        return json;
+        return mIGithub.contributorsJson(owner, repo);
+    }
+
+    /**
+     * 分支
+     */
+    public String getBranchesJson(String owner, String repo) {
+        if (mIGithub == null) {
+            return "";
+        }
+
+        return mIGithub.branchesJson(owner, repo);
     }
 }
