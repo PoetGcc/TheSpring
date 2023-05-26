@@ -1,6 +1,7 @@
 server:
   port: 8088
 
+# ********************** Feign start ********************** #
 feign:
   client:
     config:
@@ -10,3 +11,4 @@ feign:
 logging:
   level:
     feign.Logger: debug
+# ********************** Feign start ********************** #
