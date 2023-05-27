@@ -16,7 +16,7 @@ public class TheController {
                                @RequestParam(value = "repo", defaultValue = "feign") String repo) {
         String json = FeignGithubManager.getInstance().getContributorsJson(owner, repo);
         if (StringUtils.isEmpty(json)) {
-            json = "{}";
+            json = StringUtils.errorJson();
         }
         return json;
     }
@@ -27,7 +27,7 @@ public class TheController {
                                @RequestParam(value = "repo", defaultValue = "feign") String repo) {
         String json = FeignGithubManager.getInstance().getBranchesJson(owner, repo);
         if (StringUtils.isEmpty(json)) {
-            json = "{}";
+            json = StringUtils.errorJson();
         }
         return json;
     }

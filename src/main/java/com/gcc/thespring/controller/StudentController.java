@@ -24,7 +24,7 @@ public class StudentController {
         student.setName(name);
         String json = new Gson().toJson(student);
         if (StringUtils.isEmpty(json)) {
-            json = "{}";
+            json = StringUtils.errorJson();
         }
         return json;
     }
