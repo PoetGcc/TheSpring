@@ -2,8 +2,8 @@ package com.gcc.thespring.controller;
 
 import com.gcc.thespring.IRouter;
 import com.gcc.thespring.bean.Student;
+import com.gcc.thespring.utils.GsonUtils;
 import com.gcc.thespring.utils.StringUtils;
-import com.google.gson.Gson;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +22,7 @@ public class StudentController {
         Student student = new Student();
         student.setAge(age);
         student.setName(name);
-        String json = new Gson().toJson(student);
+        String json = GsonUtils.toJson(student);
         if (StringUtils.isEmpty(json)) {
             json = StringUtils.errorJson();
         }
