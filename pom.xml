@@ -83,6 +83,13 @@
 
         <!--   *******************************  openfeign End *******************************    -->
 
+        <dependency>
+            <groupId>com.unfbx</groupId>
+            <artifactId>chatgpt-java</artifactId>
+            <version>1.0.14</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

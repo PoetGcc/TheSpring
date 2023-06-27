@@ -11,4 +11,6 @@ public interface IRouter {
     String BRANCHES = "branches";
 
     /* ---------------------------------- GitHub  End ---------------------------------- */
+
+    String CHAT_MODELS = "chatModels";
 }
